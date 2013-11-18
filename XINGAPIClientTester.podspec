@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
   s.homepage = 'https://www.xing.com'
   s.dependency   'OHHTTPStubs', '~> 3.0.2'
   s.dependency   'Expecta', '~> 0.2.1'
-  s.dependency   'XINGAPI', '~> 0.0.4'
+  s.dependency   'XINGAPI', '~> 0.1.0'
 end
