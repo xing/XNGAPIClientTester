@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
     'XING iOS Team' => 'iphonedev@xing.com'
   }
   s.source = {
-    :git => 'https://github.com/xing/XNGAPIClientTester',
+    :git => 'https://github.com/xing/XINGAPIClientTester',
     :tag => '0.0.1'
   }
   s.source_files = '*.{h,m}'
