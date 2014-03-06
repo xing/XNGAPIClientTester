@@ -100,6 +100,15 @@
     return dict;
 }
 
++ (NSMutableDictionary *)dictFromJSONData:(NSData *)data {
+    NSError *error;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:0
+                                                           error:&error];
+    expect(error).to.beNil();
+    return [dict mutableCopy];
+}
+
 #pragma mark - RunLoop hack
 
 + (void)runRunLoopShortly {
@@ -115,8 +124,15 @@
 
         NSMutableDictionary *query = [XNGTestHelper dictFromQueryString:request.URL.query];
 
-        NSString *bodyString = [XNGTestHelper stringFromData:request.HTTPBody];
-        NSMutableDictionary *body = [XNGTestHelper dictFromQueryString:bodyString];
+        NSMutableDictionary *body;
+
+        NSString *contentType = [request.allHTTPHeaderFields valueForKey:@"Content-Type"];
+        if ([contentType isEqualToString:@"application/json; charset=utf-8"]) {
+            body = [XNGTestHelper dictFromJSONData:request.HTTPBody];
+        } else {
+            NSString *bodyString = [XNGTestHelper stringFromData:request.HTTPBody];
+            body = [XNGTestHelper dictFromQueryString:bodyString];
+        }
 
         if (expectations) expectations(request, query, body);
     }];
