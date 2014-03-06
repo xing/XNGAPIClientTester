@@ -86,7 +86,6 @@
                                         @"oauth_consumer_key",
                                         @"oauth_timestamp",
                                         @"oauth_signature" ]) {
-        expect([queryDict valueForKey:oauthParameter]).toNot.beNil;
         [queryDict removeObjectForKey:oauthParameter];
     }
 }
