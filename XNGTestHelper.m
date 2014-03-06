@@ -42,7 +42,7 @@
     return @"456";
 }
 
-#pragma mark - setup and teardown helper
+#pragma mark - setup and tearDown helper
 
 + (void)setupOAuthCredentials {
     [[XNGAPIClient sharedClient] setConsumerKey:[self fakeOAuthConsumerKey]];
@@ -101,7 +101,7 @@
     return dict;
 }
 
-#pragma mark - runloop hackery
+#pragma mark - RunLoop hack
 
 + (void)runRunLoopShortly {
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.1]];
