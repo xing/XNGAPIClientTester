@@ -20,7 +20,7 @@
 // THE SOFTWARE.
 
 #import "XNGTestHelper.h"
-#import <XINGAPI/XNGOAuthHandler.h>
+#import <XNGAPIClient/XNGOAuthHandler.h>
 
 @interface XNGTestHelper ()
 
