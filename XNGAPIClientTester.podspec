@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name = 'XINGAPIClientTester'
+  s.name = 'XNGAPIClientTester'
   s.version = '0.0.1'
   s.license = 'MIT'
   s.ios.deployment_target = '6.0'
