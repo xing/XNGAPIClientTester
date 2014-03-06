@@ -41,37 +41,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>5A19784578DB4DCF9407DC0D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-XNGAPIClientTesterExampleTests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>5C1B512DC2FF4F8A87ECAC69</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D8B1F9CB6CC242218ADA4224</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>5C6104D2B9A34EC2B8616F8F</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -99,21 +68,6 @@
 			<string>libPods.a</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>62D45A8C6D3D4C5484DBDBD4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-XNGAPIClientTesterExampleTests.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods-XNGAPIClientTesterExampleTests.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>7476EF259F58434FA60A480A</key>
 		<dict>
@@ -145,69 +99,6 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>85D43E5107414B749DD21799</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>D8B1F9CB6CC242218ADA4224</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-XNGAPIClientTesterExampleTests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F01E138918C8AEE200C71CD5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file</string>
-			<key>name</key>
-			<string>libPods.a</string>
-			<key>path</key>
-			<string>Pods/build/Debug-iphoneos/libPods.a</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F01E138A18C8AEE200C71CD5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F01E138918C8AEE200C71CD5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
 		<key>F035EF20183A5F7D007D5796</key>
 		<dict>
 			<key>children</key>
@@ -217,7 +108,6 @@ fi
 				<string>F035EF2B183A5F7D007D5796</string>
 				<string>F035EF2A183A5F7D007D5796</string>
 				<string>5C6104D2B9A34EC2B8616F8F</string>
-				<string>62D45A8C6D3D4C5484DBDBD4</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -389,13 +279,11 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
-				<string>F01E138918C8AEE200C71CD5</string>
 				<string>F035EF2C183A5F7D007D5796</string>
 				<string>F035EF2E183A5F7D007D5796</string>
 				<string>F035EF30183A5F7D007D5796</string>
 				<string>F035EF45183A5F7E007D5796</string>
 				<string>6259447819C6413A975204BC</string>
-				<string>D8B1F9CB6CC242218ADA4224</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -635,11 +523,9 @@ fi
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>F01E138A18C8AEE200C71CD5</string>
 				<string>F035EF46183A5F7E007D5796</string>
 				<string>F035EF48183A5F7E007D5796</string>
 				<string>F035EF47183A5F7E007D5796</string>
-				<string>5C1B512DC2FF4F8A87ECAC69</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -665,11 +551,9 @@ fi
 			<string>F035EF58183A5F7E007D5796</string>
 			<key>buildPhases</key>
 			<array>
-				<string>85D43E5107414B749DD21799</string>
 				<string>F035EF40183A5F7E007D5796</string>
 				<string>F035EF41183A5F7E007D5796</string>
 				<string>F035EF42183A5F7E007D5796</string>
-				<string>5A19784578DB4DCF9407DC0D</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -993,8 +877,6 @@ fi
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
@@ -1059,15 +941,11 @@ fi
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
 		<key>F035EF59183A5F7E007D5796</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>62D45A8C6D3D4C5484DBDBD4</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ARCHS</key>
@@ -1105,8 +983,6 @@ fi
 		</dict>
 		<key>F035EF5A183A5F7E007D5796</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>62D45A8C6D3D4C5484DBDBD4</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ARCHS</key>

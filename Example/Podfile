@@ -2,12 +2,5 @@ platform :ios, '7.0'
 
 pod 'OCMock', '~> 2.1.1'
 pod 'Expecta', '~> 0.2.1'
-pod 'XNGAPIClientTester', :path => '../'
+pod 'XINGAPIClientTester', :path => '../'
 pod 'OHHTTPStubs', '~> 3.0.2'
-
-target :XNGAPIClientTesterExampleTests, :exclusive => true do
-  pod 'OCMock', '~> 2.1.1'
-  pod 'Expecta', '~> 0.2.1'
-  pod 'XNGAPIClientTester', :path => '../'
-  pod 'OHHTTPStubs', '~> 3.0.2'
-end
