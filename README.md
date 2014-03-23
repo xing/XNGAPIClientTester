@@ -11,7 +11,7 @@ Add the `XNGAPIClientTester` pod to your Podfiles unit test target.
 
 Example:
 
-```
+```ruby
 target 'UnitTests', :exclusive => true do
   pod 'XNGAPIClientTester', '~> 0.0.3'
 end
