@@ -142,4 +142,28 @@
     [XNGTestHelper runRunLoopShortly];
 }
 
+#pragma mark - convenient methods
+
++ (void)setup {
+    // setup a fake logged in user
+    [XNGTestHelper setupOAuthCredentials];
+    [XNGTestHelper setupLoggedInUserWithUserID:@"1"];
+
+    // stub all outgoing network requests
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return nil;
+    }];
+}
+
++ (void)tearDown {
+    // remove all logged in users
+    [XNGTestHelper tearDownOAuthCredentials];
+    [XNGTestHelper tearDownLoggedInUser];
+
+    // also remove all network request stubs
+    [OHHTTPStubs removeAllStubs];
+}
+
 @end

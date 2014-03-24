@@ -43,4 +43,8 @@
 + (void)executeCall:(void (^)())call
     withExpectations:(void (^)(NSURLRequest *request, NSMutableDictionary *query, NSMutableDictionary *body))expectations;
 
++ (void)setup;
+
++ (void)tearDown;
+
 @end
