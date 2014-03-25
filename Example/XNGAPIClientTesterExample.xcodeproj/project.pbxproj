@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1643A5EAE6C0CC4BBD856705 /* XNGAPIClientTesterIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643A01A9652A3EC00FD3878 /* XNGAPIClientTesterIntegrationTests.m */; };
+		1643A92705DA02AE0320568D /* XNGAPIClientTesterUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1643A1BF6885AE4C0934F395 /* XNGAPIClientTesterUnitTests.m */; };
 		39CAAA2A92994F459E6615B6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6259447819C6413A975204BC /* libPods.a */; };
 		B9D481EB2F85406BAD51571A /* libPods-XNGAPIClientTesterExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F56720988B46FB8C5D9BE3 /* libPods-XNGAPIClientTesterExampleTests.a */; };
 		F035EF2D183A5F7D007D5796 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F035EF2C183A5F7D007D5796 /* Foundation.framework */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		1129EC3B67F94158A13749AF /* Pods-XNGAPIClientTesterExampleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGAPIClientTesterExampleTests.xcconfig"; path = "Pods/Pods-XNGAPIClientTesterExampleTests.xcconfig"; sourceTree = "<group>"; };
+		1643A01A9652A3EC00FD3878 /* XNGAPIClientTesterIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGAPIClientTesterIntegrationTests.m; sourceTree = "<group>"; };
+		1643A1BF6885AE4C0934F395 /* XNGAPIClientTesterUnitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNGAPIClientTesterUnitTests.m; sourceTree = "<group>"; };
 		5C6104D2B9A34EC2B8616F8F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6259447819C6413A975204BC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F56720988B46FB8C5D9BE3 /* libPods-XNGAPIClientTesterExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XNGAPIClientTesterExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				F035EF4C183A5F7E007D5796 /* Supporting Files */,
+				1643A1BF6885AE4C0934F395 /* XNGAPIClientTesterUnitTests.m */,
+				1643A01A9652A3EC00FD3878 /* XNGAPIClientTesterIntegrationTests.m */,
 			);
 			path = XNGAPIClientTesterExampleTests;
 			sourceTree = "<group>";
@@ -327,6 +333,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1643A92705DA02AE0320568D /* XNGAPIClientTesterUnitTests.m in Sources */,
+				1643A5EAE6C0CC4BBD856705 /* XNGAPIClientTesterIntegrationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
