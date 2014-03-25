@@ -1,6 +1,8 @@
 XINGAPIClientTester
 ===================
 
+[![Build Status](https://travis-ci.org/xing/XINGAPIClientTester.svg)](https://travis-ci.org/xing/XINGAPIClientTester)
+
 The client tester for the XINGAPIClient.
 
 This is still WIP so the API can change. Especially the `- setup` and `- tearDown` methods are way to repetitive.
