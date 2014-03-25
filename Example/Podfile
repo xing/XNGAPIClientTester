@@ -1,6 +1,6 @@
+xcodeproj 'XNGAPIClientTesterExample'
+workspace '../XNGAPIClientTesterExample'
+
 platform :ios, '7.0'
 
-pod 'OCMock', '~> 2.1.1'
-pod 'Expecta', '~> 0.2.1'
-pod 'XINGAPIClientTester', :path => '../'
-pod 'OHHTTPStubs', '~> 3.0.2'
+pod 'XNGAPIClientTester', :path => '../'
