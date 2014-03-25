@@ -25,6 +25,7 @@
 
 - (NSString *)stringFromData:(NSData *)data;
 - (NSMutableDictionary *)dictFromQueryString:(NSString *)queryString;
+- (NSMutableDictionary *)dictFromJSONData:(NSData *)data;
 - (void)runRunLoopShortly;
 
 @property (nonatomic) XNGOAuthHandler *oAuthHandler;
