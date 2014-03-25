@@ -1,6 +1,5 @@
 language: objective-c
 env:
-    - OS=6.1
     - OS=7.0
 before_install:
     - brew update
