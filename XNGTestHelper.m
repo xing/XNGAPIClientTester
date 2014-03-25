@@ -48,17 +48,23 @@
 }
 
 - (void)setupLoggedInUserWithUserID:(NSString *)userID {
-    XNGOAuthHandler *oauthHandler = [[XNGOAuthHandler alloc] init];
-    [oauthHandler saveUserID:userID
-                 accessToken:@"789"
-                      secret:@"456"
-                     success:nil
-                     failure:nil];
+    [self.oAuthHandler saveUserID:userID
+                      accessToken:@"789"
+                           secret:@"456"
+                          success:nil
+                          failure:nil];
 }
 
 - (void)tearDownLoggedInUser {
-    XNGOAuthHandler *oauthHandler = [[XNGOAuthHandler alloc] init];
-    [oauthHandler deleteKeychainEntries];
+    [self.oAuthHandler deleteKeychainEntries];
+}
+
+- (XNGOAuthHandler *)oAuthHandler {
+    if (!_oAuthHandler) {
+        _oAuthHandler = [[XNGOAuthHandler alloc] init];
+    }
+
+    return _oAuthHandler;
 }
 
 #pragma mark - body data helper
