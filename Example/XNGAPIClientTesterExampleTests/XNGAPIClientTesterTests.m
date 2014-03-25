@@ -142,7 +142,7 @@
 #pragma mark - Foundation helper
 
 - (void)testDictFromQueryString {
-    NSString *queryString = @"?key1=value1&key2=value2";
+    NSString *queryString = @"key1=value1&key2=value2";
     XNGTestHelper *classUnderTest = [[XNGTestHelper alloc] init];
 
     NSMutableDictionary *dictionary = [classUnderTest dictFromQueryString:queryString];
