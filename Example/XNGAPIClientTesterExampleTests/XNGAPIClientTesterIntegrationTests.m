@@ -35,7 +35,9 @@
 - (void)testSetupOAuthCredentials {
     [self removeOAuthCredentialsFromAPIClient];
 
-    [XNGTestHelper setupOAuthCredentials];
+    XNGTestHelper *classUnderTest = [[XNGTestHelper alloc] init];
+    [classUnderTest setupOAuthCredentials];
+
     NSString *consumerKey = [[XNGAPIClient sharedClient] valueForKey:@"key"];
     NSString *consumerSecret = [[XNGAPIClient sharedClient] valueForKey:@"secret"];
 
@@ -49,7 +51,9 @@
 }
 
 - (void)testTearDownOAuthCredentials {
-    [XNGTestHelper tearDownOAuthCredentials];
+    XNGTestHelper *classUnderTest = [[XNGTestHelper alloc] init];
+    [classUnderTest tearDownOAuthCredentials];
+
     NSString *consumerKey = [[XNGAPIClient sharedClient] valueForKey:@"key"];
     NSString *consumerSecret = [[XNGAPIClient sharedClient] valueForKey:@"secret"];
 

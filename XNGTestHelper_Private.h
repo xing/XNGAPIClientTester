@@ -19,27 +19,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <XCTest/XCTest.h>
-#define EXP_SHORTHAND
-#import <Expecta/Expecta.h>
-#import <XNGAPIClientTester/XNGTestHelper.h>
+#import "XNGTestHelper.h"
 
-@interface XNGAPIClientTesterUnitTests : XCTestCase
+@interface XNGTestHelper ()
 
-@end
+- (NSString *)stringFromData:(NSData *)data;
+- (NSMutableDictionary *)dictFromQueryString:(NSString *)queryString;
+- (void)runRunLoopShortly;
 
-@implementation XNGAPIClientTesterUnitTests
-
-- (void)testFakeOAuthConsumerKey {
-    XNGTestHelper *classUnderTest = [[XNGTestHelper alloc] init];
-    expect(classUnderTest.fakeOAuthConsumerKey).to.beKindOf(NSString.class);
-    expect(classUnderTest.fakeOAuthConsumerKey.length).to.beGreaterThan(0);
-}
-
-- (void)testFakeOAuthConsumerSecret {
-    XNGTestHelper *classUnderTest = [[XNGTestHelper alloc] init];
-    expect(classUnderTest.fakeOAuthConsumerSecret).to.beKindOf(NSString.class);
-    expect(classUnderTest.fakeOAuthConsumerSecret.length).to.beGreaterThan(0);
-}
+@property (nonatomic) XNGOAuthHandler *oAuthHandler;
 
 @end

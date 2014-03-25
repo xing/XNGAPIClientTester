@@ -21,40 +21,33 @@
 
 #import "XNGTestHelper.h"
 #import <XNGAPIClient/XNGOAuthHandler.h>
-
-@interface XNGTestHelper ()
-
-+ (NSString *)stringFromData:(NSData *)data;
-+ (NSMutableDictionary *)dictFromQueryString:(NSString *)queryString;
-+ (void)runRunLoopShortly;
-
-@end
+#import "XNGTestHelper_Private.h"
 
 @implementation XNGTestHelper
 
 #pragma mark - fake data
 
-+ (NSString *)fakeOAuthConsumerKey {
+- (NSString *)fakeOAuthConsumerKey {
     return @"123";
 }
 
-+ (NSString *)fakeOAuthConsumerSecret {
+- (NSString *)fakeOAuthConsumerSecret {
     return @"456";
 }
 
 #pragma mark - setup and tearDown helper
 
-+ (void)setupOAuthCredentials {
-    [[XNGAPIClient sharedClient] setConsumerKey:[self fakeOAuthConsumerKey]];
-    [[XNGAPIClient sharedClient] setConsumerSecret:[self fakeOAuthConsumerSecret]];
+- (void)setupOAuthCredentials {
+    [[XNGAPIClient sharedClient] setConsumerKey:self.fakeOAuthConsumerKey];
+    [[XNGAPIClient sharedClient] setConsumerSecret:self.fakeOAuthConsumerSecret];
 }
 
-+ (void)tearDownOAuthCredentials {
+- (void)tearDownOAuthCredentials {
     [[XNGAPIClient sharedClient] setConsumerKey:nil];
     [[XNGAPIClient sharedClient] setConsumerSecret:nil];
 }
 
-+ (void)setupLoggedInUserWithUserID:(NSString *)userID {
+- (void)setupLoggedInUserWithUserID:(NSString *)userID {
     XNGOAuthHandler *oauthHandler = [[XNGOAuthHandler alloc] init];
     [oauthHandler saveUserID:userID
                  accessToken:@"789"
@@ -63,14 +56,14 @@
                      failure:nil];
 }
 
-+ (void)tearDownLoggedInUser {
+- (void)tearDownLoggedInUser {
     XNGOAuthHandler *oauthHandler = [[XNGOAuthHandler alloc] init];
     [oauthHandler deleteKeychainEntries];
 }
 
 #pragma mark - body data helper
 
-+ (NSString *)stringFromData:(NSData *)data {
+- (NSString *)stringFromData:(NSData *)data {
     return [[NSString alloc] initWithData:data
                                  encoding:NSUTF8StringEncoding];
 
@@ -78,7 +71,7 @@
 
 #pragma mark - oauth parameter helper
 
-+ (void)assertAndRemoveOAuthParametersInQueryDict:(NSMutableDictionary *)queryDict {
+- (void)assertAndRemoveOAuthParametersInQueryDict:(NSMutableDictionary *)queryDict {
     for (NSString *oauthParameter in @[ @"oauth_token",
                                         @"oauth_signature_method",
                                         @"oauth_version",
@@ -90,7 +83,7 @@
     }
 }
 
-+ (NSMutableDictionary *)dictFromQueryString:(NSString *)queryString {
+- (NSMutableDictionary *)dictFromQueryString:(NSString *)queryString {
     NSArray *componentsArray = [queryString componentsSeparatedByString:@"&"];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     for (NSString *keyValueString in componentsArray) {
@@ -100,7 +93,7 @@
     return dict;
 }
 
-+ (NSMutableDictionary *)dictFromJSONData:(NSData *)data {
+- (NSMutableDictionary *)dictFromJSONData:(NSData *)data {
     NSError *error;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:0
@@ -111,27 +104,27 @@
 
 #pragma mark - RunLoop hack
 
-+ (void)runRunLoopShortly {
+- (void)runRunLoopShortly {
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:.1]];
 }
 
 #pragma mark - wrapper call
 
-+ (void)executeCall:(void (^)())call
+- (void)executeCall:(void (^)())call
    withExpectations:(void (^)(NSURLRequest *request, NSMutableDictionary *query, NSMutableDictionary *body))expectations {
 
     [OHHTTPStubs onStubActivation:^(NSURLRequest *request, id<OHHTTPStubsDescriptor> stub) {
 
-        NSMutableDictionary *query = [XNGTestHelper dictFromQueryString:request.URL.query];
+        NSMutableDictionary *query = [self dictFromQueryString:request.URL.query];
 
         NSMutableDictionary *body;
 
         NSString *contentType = [request.allHTTPHeaderFields valueForKey:@"Content-Type"];
         if ([contentType isEqualToString:@"application/json; charset=utf-8"]) {
-            body = [XNGTestHelper dictFromJSONData:request.HTTPBody];
+            body = [self dictFromJSONData:request.HTTPBody];
         } else {
-            NSString *bodyString = [XNGTestHelper stringFromData:request.HTTPBody];
-            body = [XNGTestHelper dictFromQueryString:bodyString];
+            NSString *bodyString = [self stringFromData:request.HTTPBody];
+            body = [self dictFromQueryString:bodyString];
         }
 
         if (expectations) expectations(request, query, body);
@@ -139,15 +132,15 @@
 
     if (call) call();
 
-    [XNGTestHelper runRunLoopShortly];
+    [self runRunLoopShortly];
 }
 
 #pragma mark - convenient methods
 
-+ (void)setup {
+- (void)setup {
     // setup a fake logged in user
-    [XNGTestHelper setupOAuthCredentials];
-    [XNGTestHelper setupLoggedInUserWithUserID:@"1"];
+    [self setupOAuthCredentials];
+    [self setupLoggedInUserWithUserID:@"1"];
 
     // stub all outgoing network requests
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
@@ -157,10 +150,10 @@
     }];
 }
 
-+ (void)tearDown {
+- (void)tearDown {
     // remove all logged in users
-    [XNGTestHelper tearDownOAuthCredentials];
-    [XNGTestHelper tearDownLoggedInUser];
+    [self tearDownOAuthCredentials];
+    [self tearDownLoggedInUser];
 
     // also remove all network request stubs
     [OHHTTPStubs removeAllStubs];

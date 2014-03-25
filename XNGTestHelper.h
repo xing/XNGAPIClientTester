@@ -29,22 +29,22 @@
 
 @interface XNGTestHelper : NSObject
 
-+ (NSString *)fakeOAuthConsumerKey;
-+ (NSString *)fakeOAuthConsumerSecret;
+@property (nonatomic, readonly) NSString *fakeOAuthConsumerKey;
+@property (nonatomic, readonly) NSString *fakeOAuthConsumerSecret;
 
-+ (void)setupOAuthCredentials;
-+ (void)tearDownOAuthCredentials;
+- (void)setupOAuthCredentials;
+- (void)tearDownOAuthCredentials;
 
-+ (void)setupLoggedInUserWithUserID:(NSString *)userID;
-+ (void)tearDownLoggedInUser;
+- (void)setupLoggedInUserWithUserID:(NSString *)userID;
+- (void)tearDownLoggedInUser;
 
-+ (void)assertAndRemoveOAuthParametersInQueryDict:(NSMutableDictionary *)queryDict;
+- (void)assertAndRemoveOAuthParametersInQueryDict:(NSMutableDictionary *)queryDict;
 
-+ (void)executeCall:(void (^)())call
+- (void)executeCall:(void (^)())call
     withExpectations:(void (^)(NSURLRequest *request, NSMutableDictionary *query, NSMutableDictionary *body))expectations;
 
-+ (void)setup;
+- (void)setup;
 
-+ (void)tearDown;
+- (void)tearDown;
 
 @end
