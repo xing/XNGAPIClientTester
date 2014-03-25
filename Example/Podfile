@@ -4,3 +4,8 @@ workspace '../XNGAPIClientTesterExample'
 platform :ios, '7.0'
 
 pod 'XNGAPIClientTester', :path => '../'
+
+target :XNGAPIClientTesterExampleTests, :exclusive => true do
+  pod 'Expecta'
+  pod 'OCMock'
+end

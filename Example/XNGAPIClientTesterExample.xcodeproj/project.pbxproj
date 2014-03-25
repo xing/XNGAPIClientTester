@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		39CAAA2A92994F459E6615B6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6259447819C6413A975204BC /* libPods.a */; };
+		B9D481EB2F85406BAD51571A /* libPods-XNGAPIClientTesterExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F56720988B46FB8C5D9BE3 /* libPods-XNGAPIClientTesterExampleTests.a */; };
 		F035EF2D183A5F7D007D5796 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F035EF2C183A5F7D007D5796 /* Foundation.framework */; };
 		F035EF2F183A5F7D007D5796 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F035EF2E183A5F7D007D5796 /* CoreGraphics.framework */; };
 		F035EF31183A5F7D007D5796 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F035EF30183A5F7D007D5796 /* UIKit.framework */; };
@@ -32,8 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1129EC3B67F94158A13749AF /* Pods-XNGAPIClientTesterExampleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNGAPIClientTesterExampleTests.xcconfig"; path = "Pods/Pods-XNGAPIClientTesterExampleTests.xcconfig"; sourceTree = "<group>"; };
 		5C6104D2B9A34EC2B8616F8F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6259447819C6413A975204BC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		79F56720988B46FB8C5D9BE3 /* libPods-XNGAPIClientTesterExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XNGAPIClientTesterExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F035EF29183A5F7D007D5796 /* XNGAPIClientTesterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNGAPIClientTesterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F035EF2C183A5F7D007D5796 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F035EF2E183A5F7D007D5796 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -70,6 +73,7 @@
 				F035EF46183A5F7E007D5796 /* XCTest.framework in Frameworks */,
 				F035EF48183A5F7E007D5796 /* UIKit.framework in Frameworks */,
 				F035EF47183A5F7E007D5796 /* Foundation.framework in Frameworks */,
+				B9D481EB2F85406BAD51571A /* libPods-XNGAPIClientTesterExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +88,7 @@
 				F035EF2B183A5F7D007D5796 /* Frameworks */,
 				F035EF2A183A5F7D007D5796 /* Products */,
 				5C6104D2B9A34EC2B8616F8F /* Pods.xcconfig */,
+				1129EC3B67F94158A13749AF /* Pods-XNGAPIClientTesterExampleTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +109,7 @@
 				F035EF30183A5F7D007D5796 /* UIKit.framework */,
 				F035EF45183A5F7E007D5796 /* XCTest.framework */,
 				6259447819C6413A975204BC /* libPods.a */,
+				79F56720988B46FB8C5D9BE3 /* libPods-XNGAPIClientTesterExampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F035EF58183A5F7E007D5796 /* Build configuration list for PBXNativeTarget "XNGAPIClientTesterExampleTests" */;
 			buildPhases = (
+				985158A3A0004016BAEC401E /* Check Pods Manifest.lock */,
 				F035EF40183A5F7E007D5796 /* Sources */,
 				F035EF41183A5F7E007D5796 /* Frameworks */,
 				F035EF42183A5F7E007D5796 /* Resources */,
+				81885F6048264281B01D6C9C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +267,36 @@
 			showEnvVarsInLog = 0;
 		};
 		7476EF259F58434FA60A480A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		81885F6048264281B01D6C9C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-XNGAPIClientTesterExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		985158A3A0004016BAEC401E /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -424,6 +462,7 @@
 		};
 		F035EF59183A5F7E007D5796 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1129EC3B67F94158A13749AF /* Pods-XNGAPIClientTesterExampleTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XNGAPIClientTesterExample.app/XNGAPIClientTesterExample";
@@ -447,6 +486,7 @@
 		};
 		F035EF5A183A5F7E007D5796 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1129EC3B67F94158A13749AF /* Pods-XNGAPIClientTesterExampleTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/XNGAPIClientTesterExample.app/XNGAPIClientTesterExample";
