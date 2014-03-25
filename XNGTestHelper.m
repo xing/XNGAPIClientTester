@@ -71,7 +71,7 @@
 
 #pragma mark - oauth parameter helper
 
-- (void)assertAndRemoveOAuthParametersInQueryDict:(NSMutableDictionary *)queryDict {
+- (void)removeOAuthParametersInQueryDict:(NSMutableDictionary *)queryDict {
     for (NSString *oauthParameter in @[ @"oauth_token",
                                         @"oauth_signature_method",
                                         @"oauth_version",
