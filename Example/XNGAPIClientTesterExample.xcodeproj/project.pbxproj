@@ -223,8 +223,6 @@
 			mainGroup = F035EF20183A5F7D007D5796;
 			productRefGroup = F035EF2A183A5F7D007D5796 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				F035EF28183A5F7D007D5796 /* XNGAPIClientTesterExample */,
@@ -445,6 +443,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XNGAPIClientTesterExample/XNGAPIClientTesterExample-Prefix.pch";
 				INFOPLIST_FILE = "XNGAPIClientTesterExample/XNGAPIClientTesterExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -459,6 +458,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XNGAPIClientTesterExample/XNGAPIClientTesterExample-Prefix.pch";
 				INFOPLIST_FILE = "XNGAPIClientTesterExample/XNGAPIClientTesterExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -527,6 +527,7 @@
 				F035EF57183A5F7E007D5796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F035EF58183A5F7E007D5796 /* Build configuration list for PBXNativeTarget "XNGAPIClientTesterExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +536,7 @@
 				F035EF5A183A5F7E007D5796 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
