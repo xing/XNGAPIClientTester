@@ -25,31 +25,17 @@ end
 - (void)setUp {
     [super setUp];
 
-    // setup a fake logged in user
-    [XNGTestHelper setupOAuthCredentials];
-    [XNGTestHelper setupLoggedInUserWithUserID:@"1"];
-
-    // stub all outgoing network requests
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
-    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        return nil;
-    }];
+	self.testHelper = [[XNGTestHelper alloc] init];
+	[self.testHelper setup];
 }
 
 - (void)tearDown {
     [super tearDown];
-    
-    // remove all logged in users
-    [XNGTestHelper tearDownOAuthCredentials];
-    [XNGTestHelper tearDownLoggedInUser];
-
-    // also remove all network request stubs
-    [OHHTTPStubs removeAllStubs];
+    [self.testHelper tearDown];
 }
 
 - (void)testGetNetworkFeed {
-    [XNGTestHelper executeCall:^{
+    [self.testHelper executeCall:^{
          // make a call using the XNGAPIClient
          [[XNGAPIClient sharedClient] getNetworkFeedUntil:nil
                                                userFields:nil
@@ -63,7 +49,7 @@ end
          expect(request.HTTPMethod).to.equal(@"GET");
 
          // remove all OAuth parameters
-         [XNGTestHelper assertAndRemoveOAuthParametersInQueryDict:query];
+         [self.testHelper removeOAuthParametersInQueryDict:query];
 
 
          // test and remove a key from the query
