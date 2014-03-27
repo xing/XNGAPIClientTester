@@ -5,8 +5,6 @@ XINGAPIClientTester
 
 The client tester for the XINGAPIClient.
 
-This is still WIP so the API can change. Especially the `- setup` and `- tearDown` methods are way to repetitive.
-
 ## Installation using CocoaPods
 
 Add the `XNGAPIClientTester` pod to your Podfiles unit test target.
