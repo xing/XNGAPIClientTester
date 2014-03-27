@@ -138,7 +138,7 @@
 
     if (call) call();
 
-    [self runRunLoopShortly];
+    [XNGAPIClient.sharedClient.operationQueue waitUntilAllOperationsAreFinished];
 }
 
 #pragma mark - convenient methods
