@@ -3,7 +3,7 @@ workspace '../XNGAPIClientTesterExample'
 
 platform :ios, '7.0'
 
-pod 'XNGAPIClientTester', :path => '../'
+pod 'XNGAPIClientTester', :path => '../XNGAPIClientTester.podspec'
 
 target :XNGAPIClientTesterExampleTests, :exclusive => true do
   pod 'Expecta'
