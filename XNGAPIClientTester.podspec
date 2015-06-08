@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.source_files = '*.{h,m}'
   s.requires_arc = true
   s.homepage = 'https://www.xing.com'
-  s.dependency   'OHHTTPStubs', '~> 3.0.2'
-  s.dependency   'Expecta', '~> 0.2.1'
+  s.dependency   'OHHTTPStubs'
+  s.dependency   'Expecta'
   s.dependency   'XNGAPIClient'
 end
