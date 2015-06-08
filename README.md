@@ -1,7 +1,7 @@
-XINGAPIClientTester
+XNGAPIClientTester
 ===================
 
-[![Build Status](https://travis-ci.org/xing/XINGAPIClientTester.svg)](https://travis-ci.org/xing/XINGAPIClientTester)
+[![Build Status](https://travis-ci.org/xing/XNGAPIClientTester.svg)](https://travis-ci.org/xing/XNGAPIClientTester)
 
 The client tester for the XINGAPIClient.
 
