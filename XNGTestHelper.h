@@ -25,7 +25,7 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 
-#import "XNGAPIClient.h"
+#import <XNGAPIClient/XNGAPI.h>
 
 @interface XNGTestHelper : NSObject
 
