@@ -1,7 +1,7 @@
 namespace :test do
   desc "Run tests for iOS"
   task :ios do
-    $ios_success = system("xcodebuild -workspace XNGAPIClientTesterExample.xcworkspace -scheme XNGAPIClientTesterExample -destination platform='iOS Simulator',OS=$OS,name='iPhone Retina (4-inch)' clean build test -sdk iphonesimulator | xcpretty -t -c; exit ${PIPESTATUS[0]}")
+    $ios_success = system("xcodebuild -workspace XNGAPIClientTesterExample.xcworkspace -scheme XNGAPIClientTesterExample -destination platform='iOS Simulator',OS=$OS clean build test -sdk iphonesimulator | xcpretty -t -c; exit ${PIPESTATUS[0]}")
   end
 end
 

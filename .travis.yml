@@ -1,6 +1,6 @@
 language: objective-c
 env:
-    - OS=7.0
+    - OS=8.3
 before_install:
     - brew update
     - bundle install
