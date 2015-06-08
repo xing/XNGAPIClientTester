@@ -1,0 +1,6 @@
+#coverage_service: coveralls
+#ci_service: travisci
+xcodeproj: Example/XNGAPIClientTesterExample.xcodeproj
+ignore:
+  - Example/*
+  - Example/XNGAPIClientTesterExampleTests/*

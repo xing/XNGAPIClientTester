@@ -7,3 +7,4 @@ before_install:
     - bundle install
     - cd Example && pod install && cd $TRAVIS_BUILD_DIR
 script: rake test
+after_success: bundle exec slather
