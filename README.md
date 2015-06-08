@@ -2,6 +2,11 @@ XNGAPIClientTester
 ===================
 
 [![Build Status](https://travis-ci.org/xing/XNGAPIClientTester.svg)](https://travis-ci.org/xing/XNGAPIClientTester)
+[![Coverage Status](http://img.shields.io/coveralls/xing/XNGAPIClientTester/master.svg?style=flat)](https://coveralls.io/r/xing/XNGAPIClientTester)
+[![Dependency Status](https://www.versioneye.com/objective-c/xngapiclienttester/badge.svg?style=flat)](https://www.versioneye.com/objective-c/xngapiclienttester)
+[![Cocoapods Version](http://img.shields.io/cocoapods/v/XNGAPIClientTester.svg?style=flat)](https://github.com/xing/XNGAPIClientTester/blob/master/XNGAPIClientTester.podspec)
+[![](http://img.shields.io/cocoapods/l/XNGAPIClientTester.svg?style=flat)](https://github.com/xing/XNGAPIClientTester/blob/master/LICENSE)
+[![CocoaPods Platform](http://img.shields.io/cocoapods/p/XNGAPIClientTester.svg?style=flat)]()
 
 The client tester for the XINGAPIClient.
 
@@ -13,7 +18,7 @@ Example:
 
 ```ruby
 target 'UnitTests', :exclusive => true do
-  pod 'XNGAPIClientTester', '~> 0.0.3'
+  pod 'XNGAPIClientTester'
 end
 ```
 
